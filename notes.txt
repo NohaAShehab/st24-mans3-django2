@@ -16,3 +16,96 @@ use static files
     {% load static %}
 
     --> use static file ??
+
+
+##################################################
+
+connection to database
+    by default when run the server for the first time ??
+        create db.sqlite file
+            -> django dev. server provide sqlite.db for test
+
+    or you can connect your app to the dbms
+        0> postgres ??
+
+        -->1- set connection credits
+        00> open settings.py
+
+        add the db credits
+        DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_st3',  # dbname
+        'USER': 'st3',
+        'PASSWORD': 'iti',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+
+        don't forget to install this package
+        https://pypi.org/project/psycopg2/
+
+
+    #### run this command
+    python manage.py migrate
+
+
+  #################################################################################
+  ## create superuser to access admin dashboard ??
+
+  python manage.py createsuperuser
+
+
+##################################
+create table students in db -->
+    student => id , name, grade , image , created_at, updated_at
+
+
+A model is the single, definitive source of information about your data.
+It contains the essential fields and behaviors of the data you’re storing.
+ Generally, each model maps to a single database table.
+
+########################################3
+
+when create table in any db using command
+create table ===( ===> ;
+    --> create table columns --> default null
+
+
+--> any table created via --> frameworks
+    --default  columns  --> not null --> unless you say something else
+
+
+--> django --> create migrations -
+    --> can detect changes in models --> in installed apps.
+
+    when run command python manage.py makemigrations
+        -> scan models files in installed apps for changes >>> then --> create migrations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
