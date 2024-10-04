@@ -102,6 +102,10 @@ https://docs.djangoproject.com/en/5.1/ref/models/fields/#field-types
     admin.site.register(Student)
 
 
+### get students from database
+
+
+
 
 
 

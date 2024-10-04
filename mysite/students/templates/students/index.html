@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1 style="text-align: center; color: blue"> Students from db </h1>
+
+<div style="display: inline; ">
+    {% for student in students %}
+        <div class="card" style="width: 18rem; display: inline-block; margin:auto;" >
+      <img src="{% static 'students/images/'|add:student.image %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{student.name}}</h5>
+        <p class="card-text">{{student.email}}</p>
+        <a href="{% url 'students.show' student.id %}" class="btn btn-primary">Show</a>
+          <a href="{% url 'students.delete' student.id %}" class="btn btn-danger">Delete</a>
+
+      </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock  %}

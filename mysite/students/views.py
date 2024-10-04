@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+
 from django.http import HttpResponse
+from students.models import Student
 
 # Create your views here.
 
@@ -28,6 +30,39 @@ def profile(request, id ):
    if stds:
        return render(request, 'students/profile.html', context={"student": stds[0]})
    return HttpResponse("<h1 style='color:red;'>Not Found</h1>")
+
+
+
+def index(request):
+    # get objects from db ??
+    # use models
+    # model provide functions --> get objects from db .
+    # select * from students;
+    # in django
+    students= Student.objects.all()
+    return  render(request, 'students/index.html',
+                   context={"students":students})
+
+
+# get specific student ??
+def show(request, id):
+    # get student --> with given Id
+    student = Student.objects.filter(id=id) # list --> contains one object
+    if student:
+        return render(request, 'students/show.html', context={"student": student[0]})
+
+    return HttpResponse("<h1 style='color:red;'>Not Found</h1>")
+
+
+def delete(request, id):
+    student = Student.objects.get(id=id) # get the object
+    # model provide function --> delete ??
+    # delete from students where id=id;
+    student.delete()
+    url  = reverse("students.index") # return with url ---> name --> students.index --> /students/
+    return  redirect(url)
+    # return HttpResponse("<h1 style='color:red;'>Deleted </h1>")
+
 
 
 
