@@ -84,10 +84,22 @@ create table ===( ===> ;
     when run command python manage.py makemigrations
         -> scan models files in installed apps for changes >>> then --> create migrations
 
+models
+https://docs.djangoproject.com/en/5.1/topics/db/models/#quick-example
+
+models fields types
+https://docs.djangoproject.com/en/5.1/ref/models/fields/#field-types
 
 
 
 
+
+#### add students to the db table ??
+1- use admin dashboard
+    in students app ->
+    1- open admin.py
+
+    admin.site.register(Student)
 
 
 
