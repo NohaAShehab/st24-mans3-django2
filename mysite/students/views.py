@@ -11,10 +11,10 @@ def hello(request):
 
 
 students =[
-    {"id":1, "name":"Omar", "grade":100},
-    {"id": 2, "name": "Ahmed", "grade": 100},
-    {"id": 3, "name": "Mohamed", "grade": 100},
-    {"id": 4, "name": "Noha", "grade": 100}
+    {"id":1, "name":"Omar", "grade":100, 'image':"pic1.png"},
+    {"id": 2, "name": "Ahmed", "grade": 100, 'image':"pic2.png"},
+    {"id": 3, "name": "Mohamed", "grade": 100, 'image':"pic3.png"},
+    {"id": 4, "name": "Noha", "grade": 100, 'image':"pic4.png"},
 ]
 # return with templates
 def liststds(request):

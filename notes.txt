@@ -1,0 +1,18 @@
+1- add image to the student ??
+
+    --> images, use css or js files
+    --> serving static files
+
+to add static files
+    1- create folder static inside the app
+    2- create folder inside the static --> with the name of the app
+    3- inside it --> create 3 folders (css , js , images)
+    then I have added the static file
+
+use static files
+    --> in the beginning of the page -> after extend line(if you are using temp.)
+    add this tag
+
+    {% load static %}
+
+    --> use static file ??

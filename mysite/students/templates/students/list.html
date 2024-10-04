@@ -1,17 +1,10 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 
-{% block main %}
-<h1> Students </h1>
-{% endblock %}
-
-{% block test %}
-    <h1 style="text-align: center"> Hiii</h1>
-{% endblock %}
 
 {% block content %}
-we are using django
-{{students}}
+    <h1 style="text-align: center; color: darkmagenta"> All students </h1>
 
     <table class="table table-striped">
         <thead>
@@ -19,6 +12,7 @@ we are using django
             <th>Student ID</th>
             <th>Student Name</th>
             <th>Student Grade</th>
+            <th> Student Image </th>
             <th>Show</th>
         </tr>
         </thead>
@@ -28,6 +22,9 @@ we are using django
                 <td>{{student.id}}</td>
                 <td>{{student.name}}</td>
                 <td>{{student.grade}}</td>
+                <td> {{student.image }}</td>
+
+                <td> <img width="100" height="100" src="{% static 'students/images/'|add:student.image  %}">  </td>
                 <td> <a href="{% url 'students.profile' student.id %}" class="btn btn-info"> Show </a></td>
             </tr>
         {%endfor%}
