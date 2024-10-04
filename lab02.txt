@@ -1,0 +1,31 @@
+
+1- connect your project to postgres
+don't forget to install , the connector and add the connection credits
+
+--> run command
+    python manage.py migrate
+
+then run command
+    python manage.py createsuperuser
+
+
+2- create model for Product
+    name  => varchar
+    price  --> int
+    instoke --->> int
+    image --> string
+    created_at --> datetime
+    updated_at --> datetime
+
+
+3- generate migrations for this model and run migrations
+
+4- add products to the admin dashboard then insert 10 products
+
+5- create index page --> display all products
+    --> in card like demo
+
+    >> add button show , delete
+
+
+6- don't forget to use static files
