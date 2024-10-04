@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block main %}
+<h1> Students </h1>
+{% endblock %}
+
+{% block test %}
+    <h1 style="text-align: center"> Hiii</h1>
+{% endblock %}
+
+{% block content %}
+we are using django
+{{students}}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Grade</th>
+            <th>Show</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.grade}}</td>
+                <td> <a href="{% url 'students.profile' student.id %}" class="btn btn-info"> Show </a></td>
+            </tr>
+        {%endfor%}
+        </tbody>
+
+    </table>
+
+{% endblock %}

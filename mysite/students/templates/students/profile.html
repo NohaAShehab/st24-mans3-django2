@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+  <h1>Student Info </h1>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{student.name}}</h5>
+    <p class="card-text">{{student.grade}} </p>
+    <a href="{% url 'students.list' %}" class="btn btn-primary">Back to All students </a>
+  </div>
+</div>
+
+{% endblock  %}
