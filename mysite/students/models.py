@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import  reverse
 
 # Create your models here.
 
@@ -11,3 +12,18 @@ class Student(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
     ####
+    def __str__(self):
+        return f'{self.name}'
+
+    @property
+    def show_url(self):
+        # self.id
+        url = reverse('students.show', args=[self.id])
+        return url
+
+    @property
+    def delete_url(self):
+        # self.id
+        url = reverse('students.delete', args=[self.id])
+        return url
+
