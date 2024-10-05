@@ -4,7 +4,7 @@
 {% block content %}
     <h1 style="text-align: center"> Profile</h1>
       <div class="card" style="width: 30rem; align-self: center;" >
-      <img src="{% static 'students/images/'|add:student.image %}"
+      <img src="{{student.image_url}}"
            class="card-img-top" alt="...">
       <div class="card-body">
         <h3 class="card-title">{{student.name}}</h3>

@@ -7,7 +7,8 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, null=True, unique=True)
     grade =models.IntegerField(default=0, null=True)
-    image = models.CharField(max_length=100, null=True)
+    # image = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='students/images', null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
@@ -26,4 +27,9 @@ class Student(models.Model):
         # self.id
         url = reverse('students.delete', args=[self.id])
         return url
+
+
+    @property
+    def image_url(self):
+        return f'/media/{self.image}'
 

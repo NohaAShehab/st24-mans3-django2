@@ -1,0 +1,9 @@
+
+1- to use image field
+install Pillow
+ pip install Pillow
+
+2- you must add folder --> media --> to your project
+--> where images will be uploaded and saved
+
+3- you must add media to the settings ??
