@@ -7,3 +7,30 @@ install Pillow
 --> where images will be uploaded and saved
 
 3- you must add media to the settings ??
+
+import  os
+MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+and this to urls.py
+from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("students/", include("students.urls")),
+    path("tracks/", include("tracks.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#####################################################################3
+
+automatically delete media files when object deleted
+https://pypi.org/project/django-cleanup/
+
+
+
+
+
+

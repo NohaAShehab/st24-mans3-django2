@@ -66,3 +66,26 @@ def delete(request, id):
 
 
 
+def create(request):
+    # print(request)
+    if request.method == 'POST':
+        print("params", request.POST)
+        student = Student()
+        student.name = request.POST['name']
+        student.grade = request.POST['grade']
+        student.email = request.POST['email']
+
+        # when you use enctype to allow uploading files
+        # you will find the file details in request.FILES
+        # student.image = request.POST['image']
+        student.image= request.FILES['image']
+
+        # insert into students_student
+        student.save() # save object in db.
+
+        print(student.id) # object created
+        # return HttpResponse("<h1 style='color:green;'>Request post recevied</h1>")
+        return redirect(student.show_url)
+
+    return  render(request, 'students/create.html')
+

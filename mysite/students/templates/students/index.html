@@ -4,8 +4,8 @@
 
 {% block content %}
     <h1 style="text-align: center; color: blue"> Students from db </h1>
-
-<div style="display: inline; ">
+    <a href="{% url 'students.create' %}" class="btn btn-dark"> Add new Student</a>
+<div>
     {% for student in students %}
 
         <div class="card" style="width: 18rem; display: inline-block; margin:auto;" >

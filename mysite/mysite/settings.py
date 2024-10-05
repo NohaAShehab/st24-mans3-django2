@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # add the app to the installed apps
     'students.apps.StudentsConfig',
     'tracks.apps.TracksConfig',
+    'django_cleanup.apps.CleanupConfig'
 ]
 
 MIDDLEWARE = [
