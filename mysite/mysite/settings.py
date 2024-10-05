@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # add the app to the installed apps
-    'students.apps.StudentsConfig'
+    'students.apps.StudentsConfig',
+    'tracks.apps.TracksConfig',
 ]
 
 MIDDLEWARE = [

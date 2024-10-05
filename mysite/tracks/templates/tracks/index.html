@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+{% block title %} Tracks {% endblock %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Tracks</h1>
+        <p class="lead">This is a list of all tracks available.</p>
+        <table class="table text-center table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>ID </th>
+                <th>Name </th>
+                <th>Show</th>
+                <th> Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for track in tracks %}
+                <tr>
+                    <td>{{ track.id }}</td>
+                    <td>{{ track.name }}</td>
+                    <td> <a href="" class="btn btn-dark"> Show</a></td>
+                    <td> <a href="" class="btn btn-danger"> Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}
