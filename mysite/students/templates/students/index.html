@@ -5,6 +5,8 @@
 {% block content %}
     <h1 style="text-align: center; color: blue"> Students from db </h1>
     <a href="{% url 'students.create' %}" class="btn btn-dark"> Add new Student</a>
+    <a href="{% url 'students.create_via_form' %}" class="btn btn-primary"> Add via form </a>
+
 <div>
     {% for student in students %}
 

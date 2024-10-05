@@ -30,6 +30,10 @@ automatically delete media files when object deleted
 https://pypi.org/project/django-cleanup/
 
 
+### form validation
+  ---> django provide django forms?
+  https://docs.djangoproject.com/en/5.1/topics/forms/
+
 
 
 

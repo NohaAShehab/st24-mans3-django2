@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 
 from django.http import HttpResponse
 from students.models import Student
+from students.forms import StudentForm
 
 # Create your views here.
 
@@ -88,4 +89,44 @@ def create(request):
         return redirect(student.show_url)
 
     return  render(request, 'students/create.html')
+
+
+
+def create_via_form(request):
+    form = StudentForm()
+    if request.method=='POST':
+        print(request.POST, request.FILES)
+        # form class provide validation
+        # populate form object with request.POST, request.FILES
+        form = StudentForm(request.POST, request.FILES)
+        if form.is_valid():
+            # student should be added if form is valid
+            # form save valid data --> form.clean
+            student = Student()
+            print(form.cleaned_data)
+            student.name = form.cleaned_data['name']
+            student.grade = form.cleaned_data['grade']
+            student.email =form.cleaned_data['email']
+            student.image =form.cleaned_data['image']
+            student.save()  # save object in db.
+            return redirect(student.show_url)
+            # return HttpResponse("<h1 style='color:green;'>Valid</h1>")
+
+
+
+    return render(request,
+                  'students/forms/create.html',
+                  context={"form": form})
+
+
+
+
+
+
+
+
+
+
+
+
 
