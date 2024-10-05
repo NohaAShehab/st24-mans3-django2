@@ -35,6 +35,31 @@ https://pypi.org/project/django-cleanup/
   https://docs.djangoproject.com/en/5.1/topics/forms/
 
 
+#####################################################
+
+
+# student studies at one track
+# track has many students ??
+
+==> one to many
+==> many --> students
+==> one  ---> track ??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

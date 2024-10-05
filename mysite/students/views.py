@@ -108,6 +108,8 @@ def create_via_form(request):
             student.grade = form.cleaned_data['grade']
             student.email =form.cleaned_data['email']
             student.image =form.cleaned_data['image']
+            # student.track = request.POST['track'] # id === get object with given id
+            student.track = form.cleaned_data['track']  # take id from request.POST --> then get associated track object
             student.save()  # save object in db.
             return redirect(student.show_url)
             # return HttpResponse("<h1 style='color:green;'>Valid</h1>")

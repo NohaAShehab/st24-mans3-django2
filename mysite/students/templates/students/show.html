@@ -2,17 +2,30 @@
 {% load static %}
 
 {% block content %}
-    <h1 style="text-align: center"> Profile</h1>
-      <div class="card" style="width: 30rem; align-self: center;" >
+    <h1 style="text-align: center;"> Profile</h1>
+      <div class="card" style="width: 30rem; align-self: center; display: inline-block;" >
       <img src="{{student.image_url}}"
            class="card-img-top" alt="...">
       <div class="card-body">
         <h3 class="card-title">{{student.name}}</h3>
         <p class="card-text">{{student.email}}</p>
           <p class="card-text">Grade:{{student.grade}}</p>
+        <h2 style="color: red"> Track {{student.track}}</h2>
           <p class="card-text">Created-at: {{student.created_at}}</p>
           <p class="card-text">Updated-at: {{student.updated_at}}</p>
         <a href="{% url 'students.index' %}" class="btn btn-primary">Back to all students </a>
       </div>
       </div>
+
+  <div style="display: inline-block;">
+
+    <h1> Your colleagues</h1>
+<!--    {{student.track.students.all}}-->
+    {% for std in student.track.students.all %}
+    {% if std.id != student.id %}
+      <li>  <a href="{{std.show_url}}"> {{std.name}}  </a> </li>
+    {% endif %}
+    {% endfor %}
+
+  </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import  reverse
+from tracks.models import Track
 
 # Create your models here.
 
@@ -11,6 +12,10 @@ class Student(models.Model):
     image = models.ImageField(upload_to='students/images', null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
+    track = models.ForeignKey(Track, on_delete=models.SET_NULL,
+                              related_name='students',
+                              null=True)
+    # student models needs object --> so it can deal with
 
     ####
     def __str__(self):

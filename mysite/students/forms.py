@@ -2,6 +2,9 @@
 
 from django import forms
 from students.models import Student
+from tracks.models import Track
+
+
 # create elements inside the form
 class StudentForm(forms.Form):
     # provide fields create html
@@ -9,6 +12,9 @@ class StudentForm(forms.Form):
     email=forms.EmailField(max_length=120)
     grade = forms.IntegerField(min_value=0, max_value=100)
     image = forms.ImageField(required=False)
+    track = forms.ModelChoiceField(
+        queryset=Track.objects.all(),
+    )
 
 
     # define validation rule for email

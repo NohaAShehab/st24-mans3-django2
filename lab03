@@ -1,0 +1,20 @@
+
+1- modify image of product model to be image field
+    don't forget to install pillow , add media to settings, urls
+
+
+2- create model, migration  for category
+    1- category: name, id , description , created_at, updated at
+
+
+3- connect product with category ( 1 to many)
+Don't forget related name
+
+
+4- create form to add product using django forms
+
+
+5- save object ---> make sure that productname len > 4
+
+6- display products with the same category
+
