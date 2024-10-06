@@ -10,3 +10,18 @@
     -> logout
     --> register
 
+
+# action --> record who did this actions
+add logged_in user who created the track to the track object
+
+
+
+
+
+
+
+
+
+
+
+
