@@ -1,3 +1,12 @@
 
 
  views --> classes
+
+
+ django provide built_in authentication system
+    --> login
+        -->
+
+    -> logout
+    --> register
+

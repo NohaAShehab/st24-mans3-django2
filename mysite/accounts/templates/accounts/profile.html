@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1 style="text-align: center; color: burlywood"> Profile </h1>
+      <li>Username: {{request.user.username}} </li>
+      <li> Email: {{request.user.email}} </li>
+
+{% endblock %}
