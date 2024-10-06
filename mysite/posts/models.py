@@ -35,6 +35,11 @@ class Post(models.Model):
         url = reverse("posts.edit", args=[self.id])
         return url
 
+    @property
+    def delete_url(self):
+        url = reverse("posts.delete", args=[self.id])
+        return url
+
 
     def get_absolute_url(self):
         url = reverse("posts.show", args=[self.id])

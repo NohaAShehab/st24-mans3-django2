@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from posts.forms import  PostForm
 from django.views import View
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import UpdateView, CreateView
+from django.views.generic.edit import UpdateView, CreateView, DeleteView
 
 from posts.models import Post
 
@@ -67,6 +67,12 @@ class PostCreateView(CreateView):
     model = Post
 
     # redirect post absoulute url --> show
+
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'posts/delete.html'
+    success_url = '/posts/list'
 
 
 
