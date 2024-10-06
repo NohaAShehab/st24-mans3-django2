@@ -11,4 +11,5 @@ urlpatterns = [
     path("delete/<int:id>", delete, name="students.delete"),
     path("create", create, name="students.create"),
     path("forms/create", create_via_form, name="students.create_via_form"),
+
 ]

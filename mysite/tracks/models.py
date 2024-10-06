@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.shortcuts import reverse
 # Create your models here.
 
 class Track(models.Model):
@@ -11,3 +11,9 @@ class Track(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+
+    @property
+    def show_url(self):
+        url = reverse('tracks.show', args=[self.id])
+        return url

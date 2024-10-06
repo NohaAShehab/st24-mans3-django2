@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     # add the app to the installed apps
     'students.apps.StudentsConfig',
     'tracks.apps.TracksConfig',
-    'django_cleanup.apps.CleanupConfig'
+    'django_cleanup.apps.CleanupConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -87,8 +88,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_st3',  # dbname
-        'USER': 'st3',
+        'NAME': 'djangost3',  # dbname
+        'USER': 'iti',
         'PASSWORD': 'iti',
         'HOST': 'localhost',
         'PORT': '5432',

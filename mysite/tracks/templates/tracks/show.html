@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1 style="text-align: center;"> Profile</h1>
+      <div class="card" style="width: 30rem; align-self: center; display: inline-block;" >
+      <div class="card-body">
+        <h3 class="card-title">{{track.name}}</h3>
+        <p class="card-text">{{track.capacity}}</p>
+          <p class="card-text">Created-at: {{track.created_at}}</p>
+          <p class="card-text">Updated-at: {{track.updated_at}}</p>
+        <a href="{% url 'tracks.index' %}" class="btn btn-primary">Back to all Tracks </a>
+      </div>
+      </div>
+
+  <div style="display: inline-block;">
+
+    <h1> Students in this track </h1>
+    {% for std in track.students.all %}
+      <li>  <a href="{{std.show_url}}"> {{std.name}}  </a> </li>
+    {% endfor %}
+
+  </div>
+{% endblock %}
