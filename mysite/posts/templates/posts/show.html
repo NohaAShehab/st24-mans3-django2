@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1 style="text-align: center; color: rebeccapurple"> Posts Details </h1>
+
+<div>
+
+        <div class="card" style="width: 18rem; display: inline-block; margin:auto;" >
+      <img src="{{post.image_url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+          <p> Body: {{post.body}} </p>
+          <p> Created by  <a href="{{post.creator.show_url}}"> {{post.creator }} </a></p>
+          <p> Created_at: {{post.created_at}}</p>
+          <p> Updated_at: {{post.updated_at}}</p>
+          <a href="{% url 'posts.list' %}" class="btn btn-primary">Back to All posts</a>
+      </div>
+    </div>
+
+</div>
+{% endblock  %}
